@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mohammad.faizan.khan.linux-aios.com/sitemap.xml
