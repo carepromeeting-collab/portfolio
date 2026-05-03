@@ -27,6 +27,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        if (!db) return; // Safety guard: skip if Firebase not initialized
         const skillsDoc = await getDoc(doc(db, "portfolio", "skills"));
         if (skillsDoc.exists()) setSkills(skillsDoc.data() as any);
 
