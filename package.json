@@ -9,8 +9,7 @@
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,mdx,css,json}\"",
-    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,mdx,css,json}\"",
-    "prepare": "husky install"
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,mdx,css,json}\""
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
