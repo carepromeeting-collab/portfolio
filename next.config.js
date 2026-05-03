@@ -1,10 +1,5 @@
-// Triggering fresh deployment with updated environment variables
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withBundleAnalyzer({
+const nextConfig = {
   output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
   reactStrictMode: true,
   i18n: {
@@ -35,8 +30,7 @@ const nextConfig = withBundleAnalyzer({
       tls: false,
     };
 
-    return config;
   },
-});
+};
 
 module.exports = nextConfig;
