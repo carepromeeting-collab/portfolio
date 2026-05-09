@@ -39,7 +39,7 @@ export default function AboutHero({ data }: { data: any }) {
       <div className="mt-16 w-full sm:mt-10 lg:w-1/2">
         <AnimatePresence>
           <FadeUp key="title-greeting" duration={0.6}>
-            <h1 className="text-6xl font-bold text-accent sm:text-7xl md:text-6xl lg:text-5xl xl:text-7xl">
+            <h1 className="text-5xl font-bold text-accent sm:text-7xl md:text-6xl lg:text-5xl xl:text-7xl">
               {t.greeting}
             </h1>
           </FadeUp>

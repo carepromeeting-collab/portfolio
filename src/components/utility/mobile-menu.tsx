@@ -26,63 +26,77 @@ export default function MobileMenu({
 
   return (
     <Transition show={openMenu} as={Fragment}>
-      <Dialog as="div" className="z-50" onClose={setOpenMenu}>
-        <div className="fixed inset-0 flex items-center justify-center">
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 bottom-full"
-            enterTo="opacity-100 bottom-[15%]"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 bottom-[15%]"
-            leaveTo="opacity-0 bottom-full"
-          >
-            <Dialog.Panel className="pointer-events-none absolute flex min-h-[85%] w-full flex-col items-center justify-center overflow-y-auto rounded-b-2xl border-2 border-accent/20 bg-background px-6 py-8 text-foreground shadow-lg shadow-accent/10 md:px-10 md:py-16">
-              <div className="pointer-events-auto flex flex-col items-center gap-6 text-center">
-                {routes.map((link, i) => (
-                  <button
-                    key={i}
-                    className="group relative py-2 text-3xl font-medium"
-                    onClick={() => handleClick(link.href)}
-                  >
-                    <span
-                      className={classNames(
-                        pathName === link.href ? "w-full" : "w-0",
-                        "absolute -bottom-1 left-0 h-1.5 rounded-lg bg-accent transition-[width] duration-300 group-hover:w-full",
-                      )}
-                    ></span>
-                    {link.title}
-                  </button>
-                ))}
-                
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => {
-                      const newLocale = router.locale === "en" ? "ar" : "en";
-                      router.push(pathName, pathName, { locale: newLocale });
-                      setOpenMenu(false);
-                    }}
-                    className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-accent text-accent hover:bg-accent/10"
-                  >
-                    {router.locale === "en" ? "ع" : "EN"}
-                  </button>
-                  <ThemeSwitch setClose={setOpenMenu} />
-                </div>
+      <Dialog as="div" className="relative z-[100]" onClose={setOpenMenu}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" />
+        </Transition.Child>
 
-                <div className="mt-8">
-                  <span
-                    onClick={() => {
-                      setOpenMenu(false);
-                      router.push("/admin");
-                    }}
-                    className="cursor-pointer text-base font-black text-foreground hover:text-accent transition-colors"
-                  >
-                    ©{new Date().getFullYear()} Mohammad Faizan Khan
-                  </span>
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-3xl border border-accent/20 bg-background p-10 text-left align-middle shadow-2xl transition-all">
+                <div className="flex flex-col items-center gap-8 text-center">
+                  {routes.map((link, i) => (
+                    <button
+                      key={i}
+                      className="group relative py-2 text-4xl font-black uppercase tracking-tighter"
+                      onClick={() => handleClick(link.href)}
+                    >
+                      <span
+                        className={classNames(
+                          pathName === link.href ? "w-full" : "w-0",
+                          "absolute -bottom-1 left-0 h-1 rounded-lg bg-accent transition-[width] duration-300 group-hover:w-full",
+                        )}
+                      ></span>
+                      {link.title}
+                    </button>
+                  ))}
+                  
+                  <div className="mt-4 flex gap-6">
+                    <button
+                      onClick={() => {
+                        const newLocale = router.locale === "en" ? "ar" : "en";
+                        router.push(pathName, pathName, { locale: newLocale });
+                        setOpenMenu(false);
+                      }}
+                      className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent text-lg font-black text-accent hover:bg-accent/10 transition-colors"
+                    >
+                      {router.locale === "en" ? "ع" : "EN"}
+                    </button>
+                    <ThemeSwitch setClose={setOpenMenu} />
+                  </div>
+
+                  <div className="mt-10 border-t border-accent/10 pt-8 w-full">
+                    <span
+                      onClick={() => {
+                        setOpenMenu(false);
+                        router.push("/admin");
+                      }}
+                      className="cursor-pointer text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-accent transition-colors"
+                    >
+                      ©{new Date().getFullYear()} Mohammad Faizan Khan
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Dialog.Panel>
-          </Transition.Child>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
         </div>
       </Dialog>
     </Transition>
