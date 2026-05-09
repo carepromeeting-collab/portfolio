@@ -26,7 +26,7 @@ export default function FadeUp({
   };
   return (
     <motion.div
-      initial={{ y: 200, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       whileInView={whileInView ? animation : {}}
       animate={!whileInView ? animation : {}}
     >

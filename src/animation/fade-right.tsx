@@ -28,7 +28,7 @@ export default function FadeRight({
   };
   return (
     <motion.div
-      initial={{ x: -100, opacity: 0 }}
+      initial={{ x: -20, opacity: 0 }}
       whileInView={whileInView ? animation : undefined}
       animate={!whileInView ? animation : undefined}
       className={className}

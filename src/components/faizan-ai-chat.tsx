@@ -282,7 +282,7 @@ export default function FaizanAIChat({
                   onChange={(e) => setMessage(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder={t.placeholder}
-                  className={`flex-1 bg-transparent py-2.5 text-sm font-medium outline-none placeholder:text-muted-foreground ${
+                  className={`flex-1 bg-transparent py-2.5 text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground ${
                     isRTL ? "text-right" : "text-left"
                   }`}
                 />
