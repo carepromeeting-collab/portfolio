@@ -27,7 +27,7 @@ export default function AboutHero({ data }: { data: any }) {
               src={heroProfileImg}
               width={500}
               height={500}
-              className="h-auto w-full origin-center scale-[1.35] px-0 transition-transform duration-500 sm:scale-[1.50] lg:scale-[1.60]"
+              className="h-auto w-full origin-center scale-[1.1] px-0 transition-transform duration-500 sm:scale-[1.50] lg:scale-[1.60]"
               alt="hero image"
               lightColor="#E0FFFF"
               darkColor="#004D4D"
@@ -36,7 +36,7 @@ export default function AboutHero({ data }: { data: any }) {
           </FadeUp>
         </AnimatePresence>
       </div>
-      <div className="sm:1/2 mt-10 w-full lg:w-1/2">
+      <div className="mt-16 w-full sm:mt-10 lg:w-1/2">
         <AnimatePresence>
           <FadeUp key="title-greeting" duration={0.6}>
             <h1 className="text-6xl font-bold text-accent sm:text-7xl md:text-6xl lg:text-5xl xl:text-7xl">
@@ -88,7 +88,7 @@ export default function AboutHero({ data }: { data: any }) {
           >
             <div className="relative flex w-12 gap-4 overflow-hidden rounded-md">
               <Image
-                className="-z-10 h-full w-full bg-cover bg-no-repeat"
+                className="h-full w-full bg-cover bg-no-repeat"
                 alt="Saudi Arabia flag"
                 src="https://flagcdn.com/sa.svg"
                 width={15}

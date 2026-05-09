@@ -17,7 +17,7 @@ function ShowCaseLiIcon(props: ExperienceListIconProps) {
     <figure className="absolute left-0 stroke-zinc-900">
       <svg width="75" height="75" viewBox="0 0 100 100">
         <circle
-          cx="50"
+          cx="48"
           cy="27"
           r="20"
           className="fill-none stroke-accent stroke-1"
@@ -26,12 +26,12 @@ function ShowCaseLiIcon(props: ExperienceListIconProps) {
           style={{
             pathLength: scrollYProgress,
           }}
-          cx="50"
+          cx="48"
           cy="27"
           r="20"
           className="fill-zinc-100 stroke-[5px] dark:fill-zinc-900 dark:stroke-zinc-100"
         />
-        <circle cx="50" cy="27" r="10" className="fill-accent stroke-1" />
+        <circle cx="48" cy="27" r="10" className="fill-accent stroke-1" />
       </svg>
     </figure>
   );
@@ -54,7 +54,7 @@ export default function ExperienceShowcaseListItem(
 ) {
   const ref = useRef(null);
   return (
-    <li ref={ref} className="mx-auto mb-14 flex w-[60%] flex-col gap-1">
+    <li ref={ref} className="relative mb-14 flex w-full flex-col gap-1 pl-16 sm:pl-20">
       <ShowCaseLiIcon iconRef={ref} />
       <motion.div
         initial={{ y: 50 }}

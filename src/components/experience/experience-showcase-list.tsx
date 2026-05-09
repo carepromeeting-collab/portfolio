@@ -29,7 +29,7 @@ export default function ExperienceShowcaseList(
           style={{ scaleY: scrollYProgress }}
           className="absolute left-9 top-5 h-full w-[5px] origin-top rounded-lg bg-accent"
         ></motion.div>
-        <ul className="ml-4 w-full items-center">
+        <ul className="w-full">
           {props.details.map((_details, index) => (
             <ExperienceShowcaseListItem key={index} {..._details} />
           ))}
