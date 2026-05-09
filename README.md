@@ -1,72 +1,104 @@
-# Portfolio
+# Portfolio – Mohammad Faizan Khan
 
-This portfolio is crafted using [Next.js](https://nextjs.org/)
+This portfolio website is customized and managed by **Mohammad Faizan Khan** as a personal digital space to showcase work experience, projects, operational systems, technology interests, and creative ideas.
 
-## 🖥️ Technologies Used
+Built with modern web technologies for speed, scalability, and smooth user experience.
 
-- [Nextjs.js](https://nextjs.org/) : A React-based, open-source framework for building efficient and scalable web applications.
-- [Tailwind CSS](https://tailwindcss.com) : A utility-first CSS framework for rapid UI development.
-- [TypeScript](https://www.typescriptlang.org): A typed superset of JavaScript that provides enhanced tooling and developer productivity.
-- [Framer motion](https://www.framer.com/motion/): A React animation library that brings motion to your user interfaces.
-- [Nodemailer](https://nodemailer.com/): A Node.js library facilitating easy email integration with features like attachment handling, HTML content, and support for various email services.
+## Technologies Used
 
-## 🌐 Open Source
+* [Next.js](https://nextjs.org?utm_source=chatgpt.com) — A powerful React framework for building modern, fast, and scalable web applications.
+* [Tailwind CSS](https://tailwindcss.com?utm_source=chatgpt.com) — Utility-first CSS framework for building responsive and clean user interfaces.
+* [TypeScript](https://www.typescriptlang.org?utm_source=chatgpt.com) — Typed JavaScript that improves code quality and developer productivity.
+* [Framer Motion](https://www.framer.com/motion/?utm_source=chatgpt.com) — Animation library for creating smooth and interactive UI experiences.
+* [Nodemailer](https://nodemailer.com/?utm_source=chatgpt.com) — Node.js email integration library used for contact forms and mail functionality.
 
-Feel free to use it as a template for your own portfolio or any other projects. You are granted the freedom to modify, distribute, and use the code for any purpose, unleashing your creativity without any restrictions.
+## Open Source
 
-If you have any improvements, ideas or find any bugs, don't hesitate to submit a pull request or open an issue.
+This portfolio is open source and can be used as inspiration or a template for personal projects and portfolios. Feel free to customize, modify, and expand it according to your own creativity and requirements.
 
-## 🛑 Important Note
+Contributions, suggestions, improvements, and pull requests are always welcome.
 
-1. **Do not push your Nodemailer pass on Github** as it can give access to your google email. Use `.env` file
-2. Use [Nextjs api routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) for nodemailer transporters and send mail function as they only run on server and cannot expose your google app variables to client
-3. Update google site verification code with your own inside `/src/data/siteMetaData.mjs`. Can be created for free using your google email id at <https://search.google.com/search-console/welcome>
+## Important Notes
 
-## 🌟 Customizable theme
+1. Never upload your Nodemailer password or sensitive credentials publicly on GitHub.
+2. Always use `.env` files for environment variables and secret keys.
+3. Use Next.js API routes for mail handling to keep credentials secure on the server side.
+4. Update Google site verification codes inside `/src/data/siteMetaData.mjs` with your own verification details.
 
-There are some premade themes that I have made for this portfolio inside `theme-examples.css` file. Just copy paste the styles to `globals.css` after that you are good to go or Create your own theme by editing the css variables in `globals.css`
+## Theme Customization
 
-### Note
+The project includes customizable themes that can easily be modified through the `globals.css` and `theme-examples.css` files.
 
-1. When creating custom theme the css variables only take hsl value seperated by space
-2. Theme color for Animated Logo have to be hard coded.
+You can:
 
-#### Eg. Some Premade themes
+* Use existing pre-made themes
+* Customize colors using CSS variables
+* Create your own visual identity for the portfolio
 
-![Violet-theme](https://github.com/BUMBAIYA/amitchauhan-v2/assets/85615075/25db6c35-f9e2-4c19-9060-cac2f0b544de)
-![rose-theme](https://github.com/BUMBAIYA/amitchauhan-v2/assets/85615075/f5dd1b90-3297-440d-a83c-d79c1cef7bd0)
-![yellow-theme](https://github.com/BUMBAIYA/amitchauhan-v2/assets/85615075/e5576e96-0d9d-4f37-a7ad-e14ffa5b1d21)
+### Notes
 
-## ✉️ Setup Nodemailer
+1. CSS variables only accept HSL values separated by spaces.
+2. Animated logo colors may require manual hardcoding.
 
-### Create Nodemailer User and Password
+## Nodemailer Setup
 
-1. Go to your Google Mail app or any other Google App.
-2. Click on your `Profile`
-3. Click on `Manage your Google Account`
-4. Go to `Security`
-5. Under `How you sign in Google` go to `2-Step Verification`
-6. Under `2-Step Verification` go to `App passwords`
-7. Create an app (e.g., portfolio-nodemailer), and copy the generated password securely. Use it as the value for the `NODEMAILER_PASS` variable and your email as the value for `NODEMAILER_USER` variable in `.env` file. [Note: Passwords are not visible once closed; if forgotten, delete the old app and create a new one.]
+### Create App Password
 
-### ✨ Seo
+1. Open your Google Account settings
+2. Navigate to `Security`
+3. Enable `2-Step Verification`
+4. Open `App Passwords`
+5. Create a new app password for Nodemailer
+6. Add credentials inside your `.env` file:
 
-1. The project automatically generates sitemap.xml and robots.txt files within the public folder by leveraging the project's file structure. This process is initiated through the scripts located at src/scripts/generateSitemap.mjs, executed either after the project is built or by running the command `pnpm sitemap`.
-2. It's important to note that [dynamic routes](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes), identified by file or folder names in square brackets (e.g., [segmentName], [id], or [slug]), are excluded from the sitemap.xml.
-3. Update google site verification code with your own inside `/src/data/siteMetaData.mjs`. Can be created for free using your google email id at <https://search.google.com/search-console/welcome>
+```env
+NODEMAILER_USER=your-email@gmail.com
+NODEMAILER_PASS=your-app-password
+```
 
-## 🛠️ Development setup
+## SEO Features
 
-### Step 1 - Install dependencies
+* Automatic sitemap generation
+* Automatic robots.txt generation
+* Optimized routing structure for better indexing
+* Dynamic routes excluded from sitemap generation
+* Easy Google Search Console integration
+
+## Development Setup
+
+### Step 1 — Install Dependencies
 
 ```bash
 pnpm install
 ```
 
-### Step 2 - Run the development server
+### Step 2 — Run Development Server
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the portfolio.
+Then open:
+
+```bash
+http://localhost:3000
+```
+
+in your browser to view the portfolio locally.
+
+---
+
+## About Me
+
+**Mohammad Faizan Khan**
+Project Manager • Operations Coordinator • System Builder
+
+Focused on building scalable operational systems, workforce management solutions, and technology-driven workflows across multiple industries in Saudi Arabia.
+
+Portfolio: [khan.linux-aios.com](https://khan.linux-aios.com?utm_source=chatgpt.com)
+
+---
+
+## Credits
+
+Original portfolio design and base project credit goes to the original creator and repository owner. Full respect and appreciation to the developer for making the project open source.
