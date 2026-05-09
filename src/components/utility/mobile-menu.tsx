@@ -50,12 +50,12 @@ export default function MobileMenu({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-3xl border border-accent/20 bg-background p-10 text-left align-middle shadow-2xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-3xl border border-accent/20 bg-background p-10 text-left align-middle text-foreground shadow-2xl transition-all">
                 <div className="flex flex-col items-center gap-8 text-center">
                   {routes.map((link, i) => (
                     <button
                       key={i}
-                      className="group relative py-2 text-4xl font-black uppercase tracking-tighter"
+                      className="group relative py-2 text-4xl font-black uppercase tracking-tighter text-foreground"
                       onClick={() => handleClick(link.href)}
                     >
                       <span
