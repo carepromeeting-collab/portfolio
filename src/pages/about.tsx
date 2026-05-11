@@ -46,12 +46,12 @@ export default function About() {
   return (
     <>
       <NextSeo
-        title={`${aboutContent.hero.greeting} | About`}
+        title={`Mohammad Faizan Khan | About`}
         description={aboutContent.about?.paragraphs?.[0] || aboutContent.about?.p1 || ""}
         canonical={`${siteMetadata.siteUrl}/about`}
         openGraph={{
           url: `${siteMetadata.siteUrl}/about`,
-          title: `Learn About ${aboutContent.hero.greeting}`,
+          title: `About Mohammad Faizan Khan`,
           description: aboutContent.about?.paragraphs?.[0] || aboutContent.about?.p1 || "",
           images: [
             {

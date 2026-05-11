@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <NextSeo
-        title={`${heroData.greeting} | ${heroData.title}`}
+        title={`Mohammad Faizan Khan | ${heroData.title}`}
         description={heroData.summary}
         canonical={siteMetadata.siteUrl}
         openGraph={{
@@ -58,7 +58,7 @@ export default function Home() {
           images: [
             {
               url: `${siteMetadata.siteUrl}${siteMetadata.twitterImage}`,
-              alt: "Mohd Faizan Khan - Portfolio Image",
+              alt: "Mohammad Faizan Khan - Project Manager Portfolio",
             },
           ],
           siteName: siteMetadata.siteName,
