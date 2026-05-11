@@ -1,11 +1,14 @@
 [build]
-  # Force fresh install and production build
-  command = "npm install && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
-  # Upgrading to Node 20 to support latest Firebase libraries
   NODE_VERSION = "20"
+  # Use Next.js standalone output for better Netlify compatibility
+  BUILD_STANDALONE = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[headers]]
   for = "/*"
@@ -14,4 +17,10 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    cache-control = "no-cache, no-store, must-revalidate"
+    # Standard cache control to prevent stale content while allowing Netlify's internal optimizations
+    cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/google*.html"
+  [headers.values]
+    cache-control = "public, max-age=86400"
