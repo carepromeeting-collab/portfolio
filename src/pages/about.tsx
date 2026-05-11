@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { NextSeo } from "next-seo";
+import { NextSeo, PersonJsonLd } from "next-seo";
 import { useState, useEffect } from "react";
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -65,6 +65,23 @@ export default function About() {
         twitter={{
           cardType: "summary_large_image",
         }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content: "About Mohammad Faizan Khan, Project Manager Bio, Operations Specialist Experience, CARE-PRO Team",
+          },
+        ]}
+      />
+      <PersonJsonLd
+        name="Mohammad Faizan Khan"
+        url={`${siteMetadata.siteUrl}/about`}
+        jobTitle="Project Manager & Operations Specialist"
+        company="CARE-PRO"
+        sameAs={[
+          siteMetadata.linkedin,
+          siteMetadata.github,
+          siteMetadata.twitter,
+        ]}
       />
       <AboutHero data={content?.[locale]} />
       <ExperienceShowcaseList title={tExp.title} details={experienceData[locale] || EXPERIENCE[locale]} />

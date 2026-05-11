@@ -39,8 +39,8 @@ export default function Projects() {
   return (
     <>
       <NextSeo
-        title="Projects - Mohammad Faizan Khan - Project manager Portfolio"
-        description="Explore a collection of projects by Mohammad Faizan Khan, a seasoned Project manager. From innovative web applications to responsive interfaces, discover the depth and diversity of my work."
+        title="Mohammad Faizan Khan | Projects - Project Manager Portfolio"
+        description="Explore the professional projects of Mohammad Faizan Khan, an experienced Project Manager. See successful case studies in Operational Efficiency and Strategic Planning."
         canonical={`${siteMetadata.siteUrl}/projects`}
         openGraph={{
           url: `${siteMetadata.siteUrl}/projects`,

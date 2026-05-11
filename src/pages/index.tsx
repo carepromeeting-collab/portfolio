@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { NextSeo } from "next-seo";
+import { NextSeo, PersonJsonLd, WebSiteJsonLd } from "next-seo";
 
 import { SKILLS_DATA } from "@/data/skills";
 import { HIGHLIGHTS_DATA } from "@/data/highlights";
@@ -67,6 +67,32 @@ export default function Home() {
         twitter={{
           cardType: "summary_large_image",
         }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content: "Mohammad Faizan Khan, Project Manager, Operations Specialist, Portfolio, CARE-PRO, Operational Efficiency, Strategic Planning, Resource Management",
+          },
+          {
+            name: "author",
+            content: "Mohammad Faizan Khan",
+          },
+        ]}
+      />
+      <PersonJsonLd
+        name="Mohammad Faizan Khan"
+        url={siteMetadata.siteUrl}
+        jobTitle="Project Manager & Operations Specialist"
+        company="CARE-PRO"
+        sameAs={[
+          siteMetadata.linkedin,
+          siteMetadata.github,
+          siteMetadata.twitter,
+        ]}
+      />
+      <WebSiteJsonLd
+        url={siteMetadata.siteUrl}
+        name="Mohammad Faizan Khan Portfolio"
+        description={siteMetadata.description}
       />
       <Head>
         {siteMetadata.googleSiteVerification && (
