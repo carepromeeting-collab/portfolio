@@ -28,7 +28,7 @@ export default function AboutHero({ data }: { data: any }) {
               width={500}
               height={500}
               className="h-auto w-full origin-center scale-[1.1] px-0 transition-transform duration-500 sm:scale-[1.50] lg:scale-[1.60]"
-              alt="hero image"
+              alt="Mohammad Faizan Khan - Profile Image"
               lightColor="#E0FFFF"
               darkColor="#004D4D"
               unoptimized

@@ -39,6 +39,36 @@ export default function Document(props: DocumentProps) {
             `,
           }}
         />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mohammad Faizan Khan",
+              "url": "https://mohammad.faizan.khan.linux-aios.com",
+              "jobTitle": "Project Manager",
+              "sameAs": [
+                "https://www.linkedin.com/in/mohd-faizan-khan-owner",
+                "https://www.linux-aios.com"
+              ],
+              "description": "Project manager @ CARE-PRO | Optimizing Operational Efficiency"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Mohammad Faizan Khan Portfolio",
+              "url": "https://mohammad.faizan.khan.linux-aios.com"
+            })
+          }}
+        />
       </Head>
       <body className="bg-background text-zinc-950 antialiased selection:bg-accent selection:text-background">
         <Main />

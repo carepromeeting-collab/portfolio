@@ -17,5 +17,5 @@ export const siteMetadata = {
   twitter: "https://www.linux-aios.com",
   linkedin: "https://www.linkedin.com/in/mohd-faizan-khan-owner",
   locale: "en-US",
-  googleSiteVerification: "",
+  googleSiteVerification: "googlec845b45a3dd5dd12",
 };
