@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { NextSeo, PersonJsonLd, WebSiteJsonLd } from "next-seo";
+import { NextSeo } from "next-seo";
 
 import { SKILLS_DATA } from "@/data/skills";
 import { HIGHLIGHTS_DATA } from "@/data/highlights";
@@ -78,22 +78,6 @@ export default function Home() {
           },
         ]}
       />
-      <PersonJsonLd
-        name="Mohammad Faizan Khan"
-        url={siteMetadata.siteUrl}
-        jobTitle="Project Manager & Operations Specialist"
-        company="CARE-PRO"
-        sameAs={[
-          siteMetadata.linkedin,
-          siteMetadata.github,
-          siteMetadata.twitter,
-        ]}
-      />
-      <WebSiteJsonLd
-        url={siteMetadata.siteUrl}
-        name="Mohammad Faizan Khan Portfolio"
-        description={siteMetadata.description}
-      />
       <Head>
         {siteMetadata.googleSiteVerification && (
           <meta
@@ -101,6 +85,39 @@ export default function Home() {
             content={siteMetadata.googleSiteVerification}
           />
         )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mohammad Faizan Khan",
+              "url": siteMetadata.siteUrl,
+              "jobTitle": "Project Manager & Operations Specialist",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "CARE-PRO"
+              },
+              "sameAs": [
+                siteMetadata.linkedin,
+                siteMetadata.github,
+                siteMetadata.twitter
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Mohammad Faizan Khan Portfolio",
+              "url": siteMetadata.siteUrl,
+              "description": siteMetadata.description
+            })
+          }}
+        />
       </Head>
       <LandingHero data={heroData} />
       <SkillsShowcase skills={skills[locale]} />

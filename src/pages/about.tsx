@@ -1,5 +1,6 @@
+import Head from "next/head";
 import dynamic from "next/dynamic";
-import { NextSeo, PersonJsonLd } from "next-seo";
+import { NextSeo } from "next-seo";
 import { useState, useEffect } from "react";
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -72,17 +73,29 @@ export default function About() {
           },
         ]}
       />
-      <PersonJsonLd
-        name="Mohammad Faizan Khan"
-        url={`${siteMetadata.siteUrl}/about`}
-        jobTitle="Project Manager & Operations Specialist"
-        company="CARE-PRO"
-        sameAs={[
-          siteMetadata.linkedin,
-          siteMetadata.github,
-          siteMetadata.twitter,
-        ]}
-      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mohammad Faizan Khan",
+              "url": `${siteMetadata.siteUrl}/about`,
+              "jobTitle": "Project Manager & Operations Specialist",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "CARE-PRO"
+              },
+              "sameAs": [
+                siteMetadata.linkedin,
+                siteMetadata.github,
+                siteMetadata.twitter
+              ]
+            })
+          }}
+        />
+      </Head>
       <AboutHero data={content?.[locale]} />
       <ExperienceShowcaseList title={tExp.title} details={experienceData[locale] || EXPERIENCE[locale]} />
       <ExperienceShowcaseList title={tEdu.title} details={EDUCATION[locale]} />
